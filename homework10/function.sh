@@ -8,7 +8,6 @@ mkdir kaizen elaman
 touch hello world
 }
 
-create_users
 
 #packages: wget, httpd, tree, git
 
@@ -38,4 +37,22 @@ echo "Invalid package name, please try again :("
 fi
 }
 
-install_packages
+
+app_run(){
+
+echo -e "Please make a choice: \n > 1 -> Create users \n > 2 -> Install packages"
+read -p "Please type 1 or 2: " choice 
+
+if [ $choice = "1" ]; then
+	create_users
+elif [ $choice = "2" ]; then 
+	install_packages 
+else 
+	echo "Invalid option, pleaes try again :("
+
+fi
+}
+
+
+app_run
+
